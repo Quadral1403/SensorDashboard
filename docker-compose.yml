@@ -1,0 +1,15 @@
+# nginx
+
+version: "3.1"
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: bergisch-gladbach-nginx
+    restart: always
+    ports:
+      - 17499:80
+    volumes:
+      - ./dist/sensorDashboard:/usr/share/nginx/html
+    environment:
+      - BASE_URL="https://bergisch-gladbach-grafana.schweren.dev"
