@@ -102,5 +102,7 @@
       }
     }
   },
-  "defaultProject": "sensorDashboard"
+  "cli": {
+    "analytics": false
+  }
 }

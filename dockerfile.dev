@@ -1,0 +1,20 @@
+# Base build on latest Alpine Linux image
+FROM alpine:latest
+
+# Install NodeJS and NPM
+# The --no-cache option prevents the package index from being cached locally,
+# which reduces the size of the image even further.
+RUN apk add --no-cache nodejs npm
+
+# Install yarn and Angular CLI
+RUN npm install --global yarn @angular/cli
+
+# Set /app as working directory
+WORKDIR /app
+
+# Expose port used for Angular development server
+EXPOSE 4200
+
+# By default, if no other command is provided,
+# install packages with yarn and compile the application in production mode
+CMD yarn install && ng build --configuration=production

@@ -1,6 +1,6 @@
 # SensorDashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
+This project uses [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4 and [Angular](https://github.com/angular/angular) version 16.1.5.
 
 ## Development server
 
@@ -13,6 +13,8 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+Alternatively, run ./compileLocal.sh to compile the project inside a docker environment.
 
 ## Running unit tests
 
