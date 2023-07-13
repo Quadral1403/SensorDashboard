@@ -1,8 +1,10 @@
-# Base build on latest Arch Linux image. Alpine doesn't work because of OpenSSL errors and Ubuntu has outdated, incompatible NodeJS.
-FROM archlinux:latest
+# Base build on latest Alpine Linux image
+FROM alpine:latest
 
 # Install NodeJS and NPM
-RUN pacman -Syu --noconfirm && pacman -S --noconfirm nodejs npm
+# The --no-cache option prevents the package index from being cached locally,
+# which reduces the size of the image even further.
+RUN apk add --no-cache nodejs npm
 
 # Install yarn and Angular CLI
 RUN npm install --global yarn @angular/cli
